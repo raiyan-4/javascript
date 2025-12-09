@@ -30,8 +30,8 @@ function renderProducts() {
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
-            <h3>${product.name}</h3>
-            <img src="/img/${product.image}" alt="${product.name}" style="width:100%; max-height: 150px; object-fit: cover;">
+            <h3>${textbookset}</h3>
+            <img src="/img/${textbook_set.jpeg}" alt="${product.name}" style="width:100%; max-height: 150px; object-fit: cover;">
             <p>Price: $${product.price.toFixed(2)}</p>
             <p class="inventory">Stock: ${product.inventory}</p>
             <button onclick="addToCart(${product.id})">Add to Cart</button>
