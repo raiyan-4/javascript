@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal-themes.css"> 
+    <style>
+        /* Basic styles needed for dashboard layout if not in style.css */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr; /* Sidebar | Main Content */
+            min-height: 90vh;
+        }
+        .sidebar {
+            background-color: #2c3e50; /* Darker theme for portal */
+            color: white;
+            padding-top: 20px;
+        }
+        .sidebar nav a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-left: 5px solid transparent;
+            margin-bottom: 5px;
+        }
+        .sidebar nav a:hover, .sidebar nav a.active {
+            background-color: #34495e;
+            border-left-color: var(--primary-color);
+        }
+        .main-content {
+            padding: 30px;
+            background-color: var(--bg-color);
+        }
+        .dashboard-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .grade-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .grade-list li {
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <nav>
+            <a href="../index.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div style="padding: 20px; text-align: center;">
+                <h3 id="student-name">Loading...</h3>
+                <p>ID: <span id="student-id">...</span></p>
+            </div>
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#grades">My Grades</a>
+                <a href="#attendance">Attendance</a>
+                <a href="#store">School Store (E-Com)</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h2>Welcome Back!</h2>
+
+            <section id="stats" style="display: flex; gap: 20px;">
+                <div class="dashboard-card" style="flex: 1;">
+                    <h3>Attendance Rate</h3>
+                    <p style="font-size: 2em; color: var(--secondary-color);"><span id="attendance-rate">...</span></p>
+                </div>
+                <div class="dashboard-card" style="flex: 1;">
+                    <h3>Upcoming Classes</h3>
+                    <p>Physics (10:00 AM)</p>
+                </div>
+                <div class="dashboard-card" style="flex: 1;">
+                    <h3>Latest Announcement</h3>
+                    <p>Fees payment deadline is extended.</p>
+                </div>
+            </section>
+
+            <section id="grades" class="dashboard-card">
+                <h2>My Grades</h2>
+                <ul class="grade-list" id="grades-list">
+                    <li>Loading academic data...</li>
+                </ul>
+            </section>
+
+            <section id="store" class="dashboard-card">
+                <h2>Quick Access: School Store</h2>
+                <p>Need a new uniform or book? Visit the store directly.</p>
+                <a href="../ecommerce/store.html" class="cta-button">Go to Store</a>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/portal-logic.js"></script>
+    <script>
+        // Once the page is loaded, call the rendering function
+        document.addEventListener('DOMContentLoaded', () => {
+            renderStudentData(); // Function defined in portal-logic.js
+        });
+    </script>
+</body>
+</html>
