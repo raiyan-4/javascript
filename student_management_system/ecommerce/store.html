@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>School Store</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/portal-themes.css"> </head>
-<body>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal-themes.css" />
+  </head>
+  <body>
     <header>
-        <h1>School E-Store</h1>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
-        </nav>
+      <h1>School E-Store</h1>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      </nav>
     </header>
 
     <main class="store-grid">
-        <h2>Available Products</h2>
-        <div id="product-list">
-            </div>
+      <h2>Available Products</h2>
+      <div id="product-list"></div>
     </main>
 
     <footer>
-        <p>E-Commerce Powered by SMS</p>
+      <p>E-Commerce Powered by SMS</p>
     </footer>
-    
+
     <script src="../js/main.js"></script>
     <script src="../js/portal-logic.js"></script>
     <script>
-        // Store specific initialization
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts(); // Function from portal-logic.js
-            updateCartCount(); // Function from portal-logic.js
-        });
+      // Store specific initialization
+      document.addEventListener("DOMContentLoaded", () => {
+        renderProducts(); // Function from portal-logic.js
+        updateCartCount(); // Function from portal-logic.js
+      });
     </script>
-</body>
+  </body>
 </html>
